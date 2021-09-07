@@ -1,0 +1,36 @@
+{
+  "name": "web-study",
+  "version": "0.1.0",
+  "description": "Frontend - Backend - CI/CD까지 해보며 웹 박살내기",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "vuepress-theme-api": "^1.0.1"
+  },
+  "devDependencies": {
+    "vuepress": "^1.8.2",
+    "vuepress-theme-craftdocs": "^2.0.9"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs --port 8000",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seungrodotlee/web-study-repo.git"
+  },
+  "keywords": [
+    "web",
+    "study",
+    "frontend",
+    "backend",
+    "CI/CD"
+  ],
+  "author": "seungrodotlee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seungrodotlee/web-study-repo/issues"
+  },
+  "homepage": "https://github.com/seungrodotlee/web-study-repo#readme"
+}
