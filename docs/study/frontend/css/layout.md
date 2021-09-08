@@ -19,6 +19,7 @@ Flex는 컨테이너와 아이템 개념을 사용하여, 요소의 크기가 �
 #### display
 
 `display: flex`와 `display: inline-flex`는 `display: block`과 `display: inline-block`의 관계와 같다고 생각하면 됩니다.  
+<br />
 Flex 컨테이너를 Block과 같이 수직으로 쌓이게 하느냐,(`display: flex`) 수평으로 쌓이게 하느냐(`display: inline-flex`)의 차이입니다.
 
 ::: tip inline-flex에 대하여
@@ -81,6 +82,7 @@ Item들이 한 줄인 경우에는 align-items 속성을 사용해야 합니다.
 #### align-items
 
 Item들이 교차 축에 정렬되는 방법을 설정합니다. (기본값은 stretch)  
+<br />
 단, Item들이 여러 줄인 경우, align-content가 우선 적용됩니다. Item들이 여러 줄일 때 align-items를 적용하기 위해서는 align-content의 값이 strectch이어야 합니다.
 
 | 값           | 의미                                    |
@@ -93,9 +95,10 @@ Item들이 교차 축에 정렬되는 방법을 설정합니다. (기본값은 s
 
 ::: tip Item이 여러줄일 때 align-items과 align-content는 무슨 차이가 있나요?
 align-items에서는 각 줄이 `컨테이너 교차 축 길이 / Items 줄 수`의 너비를 유지하고, 아이템들이 자신이 속한 줄 안에서 정렬됩니다.  
+<br />
 반면, align-content에서는 여러줄의 Item들을 하나의 뭉치로 컨테이너에 정렬합니다.
 
-![diff btw align](/images/align.png)
+<Example mode="align" />
 :::
 
 ### Flex Items 속성

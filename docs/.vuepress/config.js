@@ -1,6 +1,9 @@
 module.exports = {
   title: "Breaking-Web", // 사이트 타이틀
   description: "웹 박살내기",
+  head: [
+    ["link", { rel: "stylesheet", href:"https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" }]
+  ],
   themeConfig: {
     //displayAllHeaders: true,
     //logo: 'https://avatars1.githubusercontent.com/u/18749057?s=460&v=4', // 로고 이미지
@@ -18,6 +21,14 @@ module.exports = {
             "/study/frontend/css/layout",
           ],
         },
+        {
+          title: "JS 학습하기",
+          collapsable: false,
+          children: [
+            "/study/frontend/js/",
+            "/study/frontend/js/asynchronized",
+          ]
+        }
       ],
     },
   },

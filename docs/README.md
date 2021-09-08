@@ -1,15 +1,15 @@
 ---
 home: true
 heroText: BreakingWeb
-tagline: Frontend - Backend - CI/CD까지 해보며 웹 박살내기
-actionText: Get Started →
+tagline: 자료구조/알고리즘 - Frontend - Backend - CI/CD까지 해보며 웹 박살내기
+actionText: 시작하기 →
 actionLink: /study/frontend/css/
 features:
-- title: Simplicity First
-  details: Minimal setup with markdown-centered project structure helps you focus on writing.
-- title: Vue-Powered
-  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
-- title: Performant
-  details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
+- title: 다뤄볼 기술스택
+  details: Ubuntu 20.04 | NginX | Express.js | Let's Encrypt | Vue.js 3 | TailwindCSS | Axios | Docker | Jenkins
+- title: 유의사항
+  details: 본 문서는 HTML, CSS, JS 및 웹에 대해서는 아주 기초적인 지식을 보유하고 있는 분들을 타켓으로 작성되었습니다.
+- title: 문서정보
+  details: "작성자: 이승로 | 작성시작: 21.09.07"
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---

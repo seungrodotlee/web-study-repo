@@ -1,5 +1,17 @@
 <template>
   <div class="example">
+    <div class="align-example-container" v-if="mode === 'align'">
+      <div class="relative w-full rounded-md p-2">
+        <strong>align-items: flex-start</strong>
+        <div class="align-example flex flex-wrap items-start w-full h-60 rounded-md p-4" style="background: #3a3a3a;">
+          <div v-for="i in 6" :key="i" class="w-1/4 h-20 rounded-lg border-2 flex justify-center items-center" style="background: #eaeaea; border-color: #3a3a3a;">1</div>
+        </div>
+        <strong>align-content: flex-start</strong>
+        <div class="align-example flex flex-wrap content-start w-full h-60 rounded-md p-4" style="background: #3a3a3a;">
+          <div v-for="i in 6" :key="i" class="w-1/4 h-20 rounded-lg border-2 flex justify-center items-center" style="background: #eaeaea; border-color: #3a3a3a;">1</div>
+        </div>
+      </div>
+    </div>
     <div class="grow-example-container" v-if="mode === 'grow'">
       <div class="grow-example">
         <div>1</div>
@@ -51,6 +63,10 @@
         </button>
       </div>
     </div>
+    <div class="callback-example-container" v-if="mode === 'promise'">
+      <button :class="['example-btn', isPromiseExampleRunning ? 'pointer-events-none opacity-50' : '']" @click="runPromises()">여기를 눌러 위 코드를 실행시켜보세요</button>
+      <textarea ref="promiseTextarea" class="promise-textarea rounded-lg mt-4 border-2 w-full h-32" />
+    </div>
   </div>
 </template>
 
@@ -65,7 +81,8 @@ export default {
       shrinkContainerSize: "500px",
       overflowedSize: 0,
       shrinkedSize: [0, 0],
-      shrinkRatio: [0, 0]
+      shrinkRatio: [0, 0],
+      isPromiseExampleRunning: false,
     };
   },
   methods: {
@@ -100,6 +117,46 @@ export default {
       if(this.shrinkLoop) {
         requestAnimationFrame(this.shrinkAnim);
       }
+    },
+    runPromises() {
+      let textarea = this.$refs.promiseTextarea;
+      textarea.value = "";
+      this.isPromiseExampleRunning = true;
+
+      let a = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => resolve("hi"), 1000);
+        })
+      }
+
+      let b = (val) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => resolve(`${val} i'm`), 1000);
+        })
+      }
+
+      let c = (val) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => resolve(`${val} seungro`), 1000);
+        })
+      }
+
+      a()
+      .then((result) => {
+        textarea.value += `result 1: ${result}\n`;
+        return b(result);
+      })
+      .then((result) => {
+        textarea.value += `result 2: ${result}\n`;
+        return c(result);
+      })
+      .then((result) => {
+        textarea.value += `result 3: ${result}\n`;
+        return "finish!";
+      })
+      .then((result) => {
+        textarea.value += result;
+      })
     }
   },
   mounted() {
@@ -111,10 +168,6 @@ export default {
 </script>
 
 <style scoped>
-.flex {
-  display: flex;
-}
-
 .flex-grow {
   flex-grow: 1;
 }
@@ -134,7 +187,7 @@ export default {
 .shrink-example,
 .grow-example {
   display: flex;
-  width: 500px;
+  width: 200px;
   padding: 16px;
   background: #3a3a3a;
 }
@@ -146,11 +199,11 @@ export default {
 
 @keyframes shrink-container {
   from, 20% {
-    width: 500px;
+    width: 200px;
   }
 
   80%, to {
-    width: 200px;
+    width: 500px;
   }
 }
 
