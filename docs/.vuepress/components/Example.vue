@@ -20,22 +20,34 @@
       </div>
     </div>
     <div class="shrink-example-1-container" v-if="mode === 'shrink'">
-      <div class="shrink-example">
+      <div ref="shrinkContainer" :class="['shrink-example', shrinkLoop ? 'shrink-anim' : '']">
         <div style="flex-shrink: 0">1</div>
-        <div style="width: 100px;">
+        <div ref="shrink1" style="width: 100px;">
           2
         </div>
-        <div :class="shrink[1] ? 'flex-shrink-2' : ''" style="width: 200px;">
+        <div ref="shrink2" :class="shrink ? 'flex-shrink-2' : ''" style="width: 200px;">
           3
         </div>
       </div>
+      <p>컨테이너 크기: {{shrinkContainerSize}}</p>
+      <p>Item 넘침의 크기(X): {{overflowedSize}}</p>
+      <p>1번 Item 너비: 100px | flex-shrink: 0</p>
+      <p>1번 Item 너비: {{shrinkedSize[0]}} | <strong>너비감소값(Y)</strong>: 약 {{ `${100 - parseInt(shrinkedSize[0])}px` }} | flex-shrink: 1 (default)</p>
+      <p>1번 Item 너비: {{shrinkedSize[1]}} | <strong>너비감소값(Z)</strong>: 약 {{ `${200 - parseInt(shrinkedSize[1])}px` }} | flex-shrink: {{shrink[1] ? '2' : '1'}}</p>
+      <!-- <p><strong>X:Y ratio: {{shrinkRatio[0]}}</strong></p> -->
+      <p><strong>Y:X = {{shrink ? "1:5" : "1:3"}}</strong></p>
+      <p><strong>Z:X = {{shrink ? "4:5" : "2:3"}}</strong></p>
+      <p><small><strong><i>* 계산값은 소수점을 내림한 값입니다.</i></strong></small></p>
       <div class="flex">
-        <button class="example-btn" @click="toggleShrink(1)">
+        <button class="example-btn" @click="toggleShrink">
           {{
-            shrink[0]
+            shrink
               ? "undo flex-shrink on item 3"
               : "flex-shrink: 2 on item 3"
           }}
+        </button>
+        <button class="example-btn" @click="toggleShrinkLoop">
+          {{shrinkLoop ? "stop" : "run" }}
         </button>
       </div>
     </div>
@@ -48,20 +60,53 @@ export default {
   data() {
     return {
       grow: [false, false],
-      shrink: [false, false],
+      shrink: false,
+      shrinkLoop: true,
+      shrinkContainerSize: "500px",
+      overflowedSize: 0,
+      shrinkedSize: [0, 0],
+      shrinkRatio: [0, 0]
     };
   },
   methods: {
     toggleGrow(idx) {
-      //this.grow[idx] = !this.grow[idx];
       this.$set(this.grow, idx, !this.grow[idx]);
-      console.log(this.grow);
     },
-    toggleShrink(idx) {
-      this.$set(this.shrink, idx, !this.shrink[idx]);
-      console.log(this.shrink);
+    toggleShrink() {
+      this.shrink = !this.shrink;
     },
+    toggleShrinkLoop() {
+      this.shrinkLoop = !this.shrinkLoop;
+
+      if(this.shrinkLoop) {
+        requestAnimationFrame(this.shrinkAnim)
+      }
+    },
+    shrinkAnim() {
+      let shrinkContainer = this.$refs.shrinkContainer;
+      let shrinker1 = this.$refs.shrink1;
+      let shrinker2 = this.$refs.shrink2;
+
+      let conSizeOrigin = getComputedStyle(shrinkContainer).width;
+      let conSize = parseInt(conSizeOrigin);
+      let shrinker1Size = getComputedStyle(shrinker1).width;
+      let shrinker2Size = getComputedStyle(shrinker2).width;
+
+      this.shrinkContainerSize = conSize + "px";
+      this.$set(this.shrinkedSize, 0, parseInt(shrinker1Size) + "px");
+      this.$set(this.shrinkedSize, 1, parseInt(shrinker2Size) + "px");
+      this.overflowedSize = conSize < 433 ? `${433 - conSize}px` : '0px';
+
+      if(this.shrinkLoop) {
+        requestAnimationFrame(this.shrinkAnim);
+      }
+    }
   },
+  mounted() {
+    if(this.mode === "shrink") {
+      requestAnimationFrame(this.shrinkAnim);
+    }
+  }
 };
 </script>
 
@@ -94,17 +139,17 @@ export default {
   background: #3a3a3a;
 }
 
-.shrink-example {
-  animation: shrink-container infinite 2s;
+.shrink-anim {
+  animation: shrink-container infinite 6s;
   animation-direction: alternate;
 }
 
 @keyframes shrink-container {
-  from {
+  from, 20% {
     width: 500px;
   }
 
-  to {
+  80%, to {
     width: 200px;
   }
 }
@@ -142,5 +187,9 @@ export default {
   margin-top: 16px;
   background: white;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.example-btn + .example-btn {
+  margin-left: 16px;
 }
 </style>
