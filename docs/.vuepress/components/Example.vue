@@ -1,16 +1,44 @@
 <template>
   <div class="example">
-    <div class="grow-example" v-if="mode === 'grow'">
-      <div>1</div>
-      <div :class="grow[0] ? 'flex-grow' : ''">2</div>
-      <div :class="grow[1] ? 'flex-grow-2' : ''">3</div>
+    <div class="grow-example-container" v-if="mode === 'grow'">
+      <div class="grow-example">
+        <div>1</div>
+        <div :class="grow[0] ? 'flex-grow' : ''">2</div>
+        <div :class="grow[1] ? 'flex-grow-2' : ''">3</div>
+      </div>
+      <div class="flex">
+        <button class="example-btn" @click="toggleGrow(0)">
+          {{
+            grow[0] ? "undo flex-grow on item 2..." : "flex-grow: 1 on item 2!"
+          }}
+        </button>
+        <button class="example-btn" @click="toggleGrow(1)">
+          {{
+            grow[1] ? "undo flex-grow on item 3..." : "flex-grow: 2 on item 3!"
+          }}
+        </button>
+      </div>
     </div>
-    <button class="grow-btn" @click="toggleGrow(0)">
-      {{ grow[0] ? "undo grow on item 2..." : "flex grow on item 2!" }}
-    </button>
-    <button class="grow-btn" @click="toggleGrow(1)">
-      {{ grow[1] ? "undo grow-2 on item 3..." : "flex grow-2 on item 3!" }}
-    </button>
+    <div class="shrink-example-1-container" v-if="mode === 'shrink'">
+      <div class="shrink-example">
+        <div style="flex-shrink: 0">1</div>
+        <div style="width: 100px;">
+          2
+        </div>
+        <div :class="shrink[1] ? 'flex-shrink-2' : ''" style="width: 200px;">
+          3
+        </div>
+      </div>
+      <div class="flex">
+        <button class="example-btn" @click="toggleShrink(1)">
+          {{
+            shrink[0]
+              ? "undo flex-shrink on item 3"
+              : "flex-shrink: 2 on item 3"
+          }}
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,6 +48,7 @@ export default {
   data() {
     return {
       grow: [false, false],
+      shrink: [false, false],
     };
   },
   methods: {
@@ -28,11 +57,19 @@ export default {
       this.$set(this.grow, idx, !this.grow[idx]);
       console.log(this.grow);
     },
+    toggleShrink(idx) {
+      this.$set(this.shrink, idx, !this.shrink[idx]);
+      console.log(this.shrink);
+    },
   },
 };
 </script>
 
 <style scoped>
+.flex {
+  display: flex;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -41,6 +78,15 @@ export default {
   flex-grow: 2;
 }
 
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.flex-shrink-2 {
+  flex-shrink: 2;
+}
+
+.shrink-example,
 .grow-example {
   display: flex;
   width: 500px;
@@ -48,6 +94,22 @@ export default {
   background: #3a3a3a;
 }
 
+.shrink-example {
+  animation: shrink-container infinite 2s;
+  animation-direction: alternate;
+}
+
+@keyframes shrink-container {
+  from {
+    width: 500px;
+  }
+
+  to {
+    width: 200px;
+  }
+}
+
+.shrink-example > div,
 .grow-example > div {
   display: flex;
   justify-content: center;
@@ -57,16 +119,19 @@ export default {
   background: #eaeaea;
 }
 
+.shrink-example > div + div,
 .grow-example > div + div {
   margin-left: 16px;
 }
 
+.shrink-example,
+.shrink-example div,
 .grow-example,
 .grow-example div {
   border-radius: 8px;
 }
 
-.grow-btn {
+.example-btn {
   display: flex;
   justify-content: center;
   align-items: center;

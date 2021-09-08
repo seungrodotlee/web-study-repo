@@ -111,4 +111,12 @@ order 속성을 사용하면 HTML 구조와 상관없이, order가 낮은 요소
 #### flex-grow
 
 flex-grow가 적용된 요소들은 컨테이너가 요소들을 배치하고 남은 컨테이너 공간을 나눠 가질 수 있습니다.
+
 <Example mode="grow" />
+
+#### flex-shrink
+
+flex-shrink가 적용된 요소들은 컨테이너가 줄어들어 Item들이 넘치려 할 때, 넘치지 않도록 크기가 줄어드는 비율을 설정합니다.
+단, 여기서 **비율은 요소들이 기본적으로 가지고 있는 너비에 영향을 받습니다.**
+
+<Example mode="shrink" />
