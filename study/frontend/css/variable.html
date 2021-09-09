@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS 변수 | Breaking-Web</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+    <meta name="description" content="웹 박살내기">
+    
+    <link rel="preload" href="/assets/css/0.styles.4ef0f5e0.css" as="style"><link rel="preload" href="/assets/js/app.6025681a.js" as="script"><link rel="preload" href="/assets/js/2.0e074105.js" as="script"><link rel="preload" href="/assets/js/17.7b400425.js" as="script"><link rel="preload" href="/assets/js/3.009c281c.js" as="script"><link rel="prefetch" href="/assets/js/10.6047e51f.js"><link rel="prefetch" href="/assets/js/11.6dbf7fce.js"><link rel="prefetch" href="/assets/js/12.dff9c09c.js"><link rel="prefetch" href="/assets/js/13.c4e37c2f.js"><link rel="prefetch" href="/assets/js/14.2afb602b.js"><link rel="prefetch" href="/assets/js/15.15d1f378.js"><link rel="prefetch" href="/assets/js/16.13599f4e.js"><link rel="prefetch" href="/assets/js/18.ba0735e5.js"><link rel="prefetch" href="/assets/js/19.cb346590.js"><link rel="prefetch" href="/assets/js/20.9b388371.js"><link rel="prefetch" href="/assets/js/21.ffaebba4.js"><link rel="prefetch" href="/assets/js/22.245211f7.js"><link rel="prefetch" href="/assets/js/23.dcca354f.js"><link rel="prefetch" href="/assets/js/24.a5d8feff.js"><link rel="prefetch" href="/assets/js/4.006852a4.js"><link rel="prefetch" href="/assets/js/5.e5ce56eb.js"><link rel="prefetch" href="/assets/js/6.52340620.js"><link rel="prefetch" href="/assets/js/7.332edea0.js"><link rel="prefetch" href="/assets/js/8.b960260b.js"><link rel="prefetch" href="/assets/js/9.9f015e10.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4ef0f5e0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Breaking-Web</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>CSS 학습하기</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/frontend/css/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/study/frontend/css/precedence.html" class="sidebar-link">CSS 우선순위</a></li><li><a href="/study/frontend/css/layout.html" class="sidebar-link">레이아웃 잡기</a></li><li><a href="/study/frontend/css/motion-in-css.html" class="sidebar-link">CSS에서의 모션 효과</a></li><li><a href="/study/frontend/css/pseudo.html" class="sidebar-link">가상선택자</a></li><li><a href="/study/frontend/css/variable.html" aria-current="page" class="active sidebar-link">CSS 변수</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/study/frontend/css/variable.html#css-변수는-어떻게-왜-쓸까" class="sidebar-link">CSS 변수는 어떻게, 왜 쓸까?</a></li><li class="sidebar-sub-header"><a href="/study/frontend/css/variable.html#css-변수의-상속" class="sidebar-link">CSS 변수의 상속</a></li></ul></li><li><a href="/study/frontend/css/media-query.html" class="sidebar-link">반응형 웹</a></li><li><a href="/study/frontend/css/pre-processer.html" class="sidebar-link">CSS 전처리기</a></li><li><a href="/study/frontend/css/tailwindcss.html" class="sidebar-link">tailwindCSS</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>JS 학습하기</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/frontend/js/" class="sidebar-link">Introduction</a></li><li><a href="/study/frontend/js/arrow-function.html" class="sidebar-link">화살표 함수</a></li><li><a href="/study/frontend/js/this.html" class="sidebar-link">자바스크립트의 this</a></li><li><a href="/study/frontend/js/iife.html" class="sidebar-link">즉시실행함수</a></li><li><a href="/study/frontend/js/asynchronized.html" class="sidebar-link">비동기처리</a></li><li><a href="/study/frontend/js/context.html" class="sidebar-link">실행 컨텍스트</a></li><li><a href="/study/frontend/js/closure.html" class="sidebar-link">클로저</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="css-변수"><a href="#css-변수" class="header-anchor">#</a> CSS 변수</h1> <h2 id="css-변수는-어떻게-왜-쓸까"><a href="#css-변수는-어떻게-왜-쓸까" class="header-anchor">#</a> CSS 변수는 어떻게, 왜 쓸까?</h2> <p>개발을 하다보면, 특정 값을 여러 선택자에서 반복적으로 사용해야 할 때가 있습니다. 예를들어, 브랜드 컬러를 사용한다고 생각해본다면,</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.text-primary</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #F5DF4D<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.bg-primary</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #F5DF4D<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.border-primary</span> <span class="token punctuation">{</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> #F5DF4D<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.some-element::after</span> <span class="token punctuation">{</span>
+  // some CSS
+  <span class="token property">color</span><span class="token punctuation">:</span> #F5DF4D<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+// 그리고 #F5DF4D 색상을 사용하는 수많은 클래스들...
+</code></pre></div><p>위와 같이 CSS를 작성해야 할 것입니다. 그런데 만약 중간에 브랜드 컬러가 바뀌었다면, 수많은 <code>#F5DF4D</code>를 다른 값으로 바꿔주어야 하는데, 꽤 번거롭고 귀찮은 일입니다. 특히, CSS 블록들이 여기저기 널부러져 있으면 정말 어지러운 상황이 되겠죠.<br> <br>
+CSS 변수라 불리는 사용자 지정 CSS 속성은 이런 상황에 유용하게 사용될 수 있습니다.</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">:root</span> <span class="token punctuation">{</span>
+  <span class="token property">--primary-color</span><span class="token punctuation">:</span> #F5DF4D<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.text-primary</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--primary-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.bg-primary</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--primary-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.border-primary</span> <span class="token punctuation">{</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--primary-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.some-element::after</span> <span class="token punctuation">{</span>
+  // some CSS
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--primary-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+// 그리고 --primary-color 색상을 사용하는 수많은 클래스들...
+</code></pre></div><h2 id="css-변수의-상속"><a href="#css-변수의-상속" class="header-anchor">#</a> CSS 변수의 상속</h2> <p>앞서 살펴본 코드에서 <code>:root</code> 선택자는 최상위 요소, 즉 <code>html</code> 요소를 뜻합니다. CSS 변수는 하위 요소로 상속이 되기 때문에 최상위 요소에 변수를 정의해두면 하위 요소에서도 쓸 수 있습니다. 이를 활용하면, HTML 구조에 따라 요소들마다 똑같은 변수로 서로 다른 값을 가지게 할 수도 있습니다.</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>big-container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>hello<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>small-container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>world<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>i'm seungro<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.big-container</span> <span class="token punctuation">{</span>
+    <span class="token property">--default-font-size</span><span class="token punctuation">:</span> 24px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.small-container</span> <span class="token punctuation">{</span>
+    <span class="token property">--default-font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">p</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--default-font-size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="example" data-v-2301782c><!----> <!----> <!----> <!----> <div class="css-var-example-container rounded-md bg-gray-200 px-6 py-4" data-v-2301782c><div class="big-container" data-v-2301782c><p data-v-2301782c>hello</p></div> <div class="small-container" data-v-2301782c><p data-v-2301782c>world</p></div> <p data-v-2301782c>i'm seungro</p></div> <!----></div> <p>hello는 <code>.big-container</code>에서 정의한 변수에 영향을 받아, 폰트 크기가 <code>24px</code>로 출력되고, world는 <code>.small-container</code>에서 정의한 변수에 영향을 받아, 폰트 크기가 <code>12px</code>로 출력되었습니다. 그리고 i'm seungro는 영향을 받는 변수가 없기 때문에, <code>var(--default-font-size)</code>가 무시됩니다.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/study/frontend/css/pseudo.html" class="prev">
+        가상선택자
+      </a></span> <span class="next"><a href="/study/frontend/css/media-query.html">
+        반응형 웹
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6025681a.js" defer></script><script src="/assets/js/2.0e074105.js" defer></script><script src="/assets/js/17.7b400425.js" defer></script><script src="/assets/js/3.009c281c.js" defer></script>
+  </body>
+</html>

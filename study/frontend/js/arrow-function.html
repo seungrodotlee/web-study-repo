@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>화살표 함수 | Breaking-Web</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+    <meta name="description" content="웹 박살내기">
+    
+    <link rel="preload" href="/assets/css/0.styles.4ef0f5e0.css" as="style"><link rel="preload" href="/assets/js/app.6025681a.js" as="script"><link rel="preload" href="/assets/js/2.0e074105.js" as="script"><link rel="preload" href="/assets/js/19.cb346590.js" as="script"><link rel="prefetch" href="/assets/js/10.6047e51f.js"><link rel="prefetch" href="/assets/js/11.6dbf7fce.js"><link rel="prefetch" href="/assets/js/12.dff9c09c.js"><link rel="prefetch" href="/assets/js/13.c4e37c2f.js"><link rel="prefetch" href="/assets/js/14.2afb602b.js"><link rel="prefetch" href="/assets/js/15.15d1f378.js"><link rel="prefetch" href="/assets/js/16.13599f4e.js"><link rel="prefetch" href="/assets/js/17.7b400425.js"><link rel="prefetch" href="/assets/js/18.ba0735e5.js"><link rel="prefetch" href="/assets/js/20.9b388371.js"><link rel="prefetch" href="/assets/js/21.ffaebba4.js"><link rel="prefetch" href="/assets/js/22.245211f7.js"><link rel="prefetch" href="/assets/js/23.dcca354f.js"><link rel="prefetch" href="/assets/js/24.a5d8feff.js"><link rel="prefetch" href="/assets/js/3.009c281c.js"><link rel="prefetch" href="/assets/js/4.006852a4.js"><link rel="prefetch" href="/assets/js/5.e5ce56eb.js"><link rel="prefetch" href="/assets/js/6.52340620.js"><link rel="prefetch" href="/assets/js/7.332edea0.js"><link rel="prefetch" href="/assets/js/8.b960260b.js"><link rel="prefetch" href="/assets/js/9.9f015e10.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4ef0f5e0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Breaking-Web</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>CSS 학습하기</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/frontend/css/" class="sidebar-link">Introduction</a></li><li><a href="/study/frontend/css/precedence.html" class="sidebar-link">CSS 우선순위</a></li><li><a href="/study/frontend/css/layout.html" class="sidebar-link">레이아웃 잡기</a></li><li><a href="/study/frontend/css/motion-in-css.html" class="sidebar-link">CSS에서의 모션 효과</a></li><li><a href="/study/frontend/css/pseudo.html" class="sidebar-link">가상선택자</a></li><li><a href="/study/frontend/css/variable.html" class="sidebar-link">CSS 변수</a></li><li><a href="/study/frontend/css/media-query.html" class="sidebar-link">반응형 웹</a></li><li><a href="/study/frontend/css/pre-processer.html" class="sidebar-link">CSS 전처리기</a></li><li><a href="/study/frontend/css/tailwindcss.html" class="sidebar-link">tailwindCSS</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>JS 학습하기</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/frontend/js/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/study/frontend/js/arrow-function.html" aria-current="page" class="active sidebar-link">화살표 함수</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/study/frontend/js/arrow-function.html#화살표-함수는-this를-바인딩하지-않습니다" class="sidebar-link">화살표 함수는 this를 바인딩하지 않습니다</a></li></ul></li><li><a href="/study/frontend/js/this.html" class="sidebar-link">자바스크립트의 this</a></li><li><a href="/study/frontend/js/iife.html" class="sidebar-link">즉시실행함수</a></li><li><a href="/study/frontend/js/asynchronized.html" class="sidebar-link">비동기처리</a></li><li><a href="/study/frontend/js/context.html" class="sidebar-link">실행 컨텍스트</a></li><li><a href="/study/frontend/js/closure.html" class="sidebar-link">클로저</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="화살표-함수"><a href="#화살표-함수" class="header-anchor">#</a> 화살표 함수</h1> <p>화살표 함수는 보다 짧고 간결한 함수 표현이 가능해서 많이 사용되는 함수 표현입니다. 그러나, <code>function</code> 키워드를 사용하여 만드는 일반적인 함수와 차이점이 있어, 주의하지 않고 사용하면 예기치 못한 오류를 마주할 수도 있습니다.</p> <h2 id="화살표-함수는-this를-바인딩하지-않습니다"><a href="#화살표-함수는-this를-바인딩하지-않습니다" class="header-anchor">#</a> 화살표 함수는 this를 바인딩하지 않습니다</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  hello<span class="token operator">:</span> <span class="token string">&quot;world!&quot;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">say</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>hello<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+obj<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>위 코드의 출력결과는 어떻게 될까요? 일반적인 생각으로, <code>say()</code> 메소드는 <code>obj</code> 객체의 멤버이므로, <code>say()</code>메소드에서 호출하는 <code>this.hello</code>는 <code>obj.hello</code>, 즉, 출력 결과는 <code>world!</code>가 될 것으로 예상할 수 있습니다.<br> <br>
+그러나, 실제 위 코드를 실행해보면 <code>undefined</code>가 출력되는 것을 볼 수 있습니다.<br> <br>
+일반함수는 호출 방식에 따라 <code>this</code>에 바인딩할 객체가 결정되는 반면, 화살표 함수의 <code>this</code>는 무조건 상위 스코프의 <code>this</code>를 가리킵니다. 또한, <code>prototype</code>, <code>arguments</code>, <code>super</code> 역시 존재하지 않고, 생성자로 사용할 수가 없습니다.<br> <br>
+위 코드에서 <code>undefined</code>가 출력된 것은, <code>say()</code> 메소드가 화살표 함수이기 때문에, 메소드 내의 <code>this</code>가 메소드를 소유한 <code>obj</code> 객체가 아닌, 상위 스코프인 <code>window</code> 객체, 즉 전역객체를 가리키기 때문에 발생한 현상입니다.<br> <br>
+이처럼, 객체의 메소드로 화살표 함수를 사용하면 예상치 못한 오류를 발생시킬 수 있습니다.</p> <br>
+화살표 함수는 축약 문법을 지원하기 때문에, 콜백으로 짧은 함수를 넘겨야 할 때 유용하게 사용될 수 있습니다.
+<div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/* 다음 네개의 메소드는 모두 동일한 결과를 출력합니다 */</span>
+
+<span class="token keyword">let</span> <span class="token function-variable function">a</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">param</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> param <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 매개변수가 한개인 경우, 파라미터 괄호를 생략할 수 있습니다.</span>
+<span class="token keyword">let</span> <span class="token function-variable function">b</span> <span class="token operator">=</span> <span class="token parameter">param</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> param <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 본문이 한 줄인 경우, 본문 괄호를 생략할 수 있으며, 이 때 작성한 표현식의 값을 return 합니다.</span>
+<span class="token keyword">let</span> <span class="token function-variable function">c</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">param</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> param <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 위 두 특성을 조합하여 사용할 수도 있습니다.</span>
+<span class="token keyword">let</span> <span class="token function-variable function">d</span> <span class="token operator">=</span> <span class="token parameter">param</span> <span class="token operator">=&gt;</span> param <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/study/frontend/js/" class="prev router-link-active">
+        Introduction
+      </a></span> <span class="next"><a href="/study/frontend/js/this.html">
+        자바스크립트의 this
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6025681a.js" defer></script><script src="/assets/js/2.0e074105.js" defer></script><script src="/assets/js/19.cb346590.js" defer></script>
+  </body>
+</html>
