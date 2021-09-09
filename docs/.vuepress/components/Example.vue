@@ -67,6 +67,20 @@
       <button :class="['example-btn', isPromiseExampleRunning ? 'pointer-events-none opacity-50' : '']" @click="runPromises()">여기를 눌러 위 코드를 실행시켜보세요</button>
       <textarea ref="promiseTextarea" class="promise-textarea rounded-lg mt-4 border-2 w-full h-32" />
     </div>
+    <div class="css-var-example-container rounded-md bg-gray-200 px-6 py-4" v-if="mode === 'css-var'">
+      <div class="big-container">
+        <p>hello</p>  
+      </div>
+      <div class="small-container">
+        <p>world</p>
+      </div>
+      <p>i'm seungro</p>
+    </div>
+    <div class="transition-example-container" style="height: 300px;" v-if="mode === 'transition'">
+      <div class="flex justify-center items-center bg-gray-300 rounded-md text-center transition-box">
+        마우스를<br />올려보세요!
+      </div>
+    </div>
   </div>
 </template>
 
@@ -244,5 +258,30 @@ export default {
 
 .example-btn + .example-btn {
   margin-left: 16px;
+}
+
+.css-var-example-container .big-container {
+  --default-font-size: 24px;
+}
+
+.css-var-example-container .small-container {
+  --default-font-size: 12px;
+}
+
+.css-var-example-container p {
+  font-size: var(--default-font-size);
+}
+
+.transition-box {
+  height: 200px;
+  width: 200px;
+  font-size: 16px;
+  transition: height 1s linear 0s, width 1s cubic-bezier(0.7, 0, 0.3, 1) 1s;
+}
+
+.transition-box:hover {
+  height: 300px;
+  width: 300px;
+  font-size: 24px;
 }
 </style>

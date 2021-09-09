@@ -1,5 +1,13 @@
+html body {
+  font-family: "Spoqa Han Sans Neo", sans-serif;
+}
+
 td {
   line-height: 1.5rem;
+}
+
+td:first-child {
+  white-space: nowrap;
 }
 
 button {
@@ -15,6 +23,28 @@ button:active {
   transform: scale(0.95);
 }
 
-.home .hero p.description {
-  max-width: unset;
+main.home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.home .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+@media (min-width: 720px) {
+  .home div.features {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home .hero p.description {
+    max-width: unset;
+  }
 }
