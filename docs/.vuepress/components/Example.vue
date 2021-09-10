@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="shrink-example-1-container" v-if="mode === 'shrink'">
-      <div ref="shrinkContainer" :class="['shrink-example', shrinkLoop ? 'shrink-anim' : '']">
+      <div ref="shrinkContainer" :class="['shrink-example shrink-anim', shrinkLoop ? '' : 'pause-anim']">
         <div style="flex-shrink: 0">1</div>
         <div ref="shrink1" style="width: 100px;">
           2
@@ -109,9 +109,9 @@ export default {
     toggleShrinkLoop() {
       this.shrinkLoop = !this.shrinkLoop;
 
-      if(this.shrinkLoop) {
-        requestAnimationFrame(this.shrinkAnim)
-      }
+      // if(this.shrinkLoop) {
+      //   requestAnimationFrame(this.shrinkAnim)
+      // }
     },
     shrinkAnim() {
       let shrinkContainer = this.$refs.shrinkContainer;
@@ -128,9 +128,7 @@ export default {
       this.$set(this.shrinkedSize, 1, parseInt(shrinker2Size) + "px");
       this.overflowedSize = conSize < 433 ? `${433 - conSize}px` : '0px';
 
-      if(this.shrinkLoop) {
-        requestAnimationFrame(this.shrinkAnim);
-      }
+      requestAnimationFrame(this.shrinkAnim);
     },
     runPromises() {
       let textarea = this.$refs.promiseTextarea;
@@ -201,7 +199,7 @@ export default {
 .shrink-example,
 .grow-example {
   display: flex;
-  width: 200px;
+  width: 500px;
   padding: 16px;
   background: #3a3a3a;
 }
@@ -211,13 +209,17 @@ export default {
   animation-direction: alternate;
 }
 
+.pause-anim {
+  animation-play-state: paused;
+}
+
 @keyframes shrink-container {
   from, 20% {
-    width: 200px;
+    width: 500px;
   }
 
   80%, to {
-    width: 500px;
+    width: 200px;
   }
 }
 
