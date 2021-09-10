@@ -1,6 +1,7 @@
 module.exports = {
   title: "Breaking-Web", // 사이트 타이틀
   description: "웹 박살내기",
+  base: "/web-study-repo/",
   head: [
     ["link", { rel: "stylesheet", href:"https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" }],
     ["link", { rel: "stylesheet", href:"https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" }]
