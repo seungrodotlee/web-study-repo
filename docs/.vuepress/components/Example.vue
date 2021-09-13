@@ -81,6 +81,23 @@
         마우스를<br />올려보세요!
       </div>
     </div>
+    <div class="animation-example-container" v-if="mode === 'animation'">
+      <div class="flex">
+        <div class="flex justify-center items-center w-32 h-32 bg-gray-100 border-2 border-gray-300">
+          <div :class="[animateBall ? 'animation-ball' : '', 'w-24 h-24 rounded-full bg-gray-300 border-2 border-gray-400 shadow-xl']"></div>
+        </div>
+        <div class="flex justify-center items-center w-32 h-32 bg-gray-100 border-2 border-l-0 border-gray-300">
+          <div :class="[animateBall ? 'animation-ball' : '', 'animation-alternate w-24 h-24 rounded-full bg-gray-300 border-2 border-gray-400 shadow-xl']"></div>
+        </div>
+        <div class="flex justify-center items-center w-32 h-32 bg-gray-100 border-2 border-l-0 border-gray-300">
+          <div :class="[animateBall ? 'animation-ball' : '', 'animation-forward w-24 h-24 rounded-full bg-gray-300 border-2 border-gray-400 shadow-xl']"></div>
+        </div>
+        <div class="flex justify-center items-center w-32 h-32 bg-gray-100 border-2 border-l-0 border-gray-300">
+          <div :class="[animateBall ? 'animation-ball' : '', 'animation-infinite animation-alternate w-24 h-24 rounded-full bg-gray-300 border-2 border-gray-400 shadow-xl']"></div>
+        </div>
+      </div>
+      <button class="example-btn" @click="restartAnimation">restart</button>
+    </div>
   </div>
 </template>
 
@@ -97,6 +114,7 @@ export default {
       shrinkedSize: [0, 0],
       shrinkRatio: [0, 0],
       isPromiseExampleRunning: false,
+      animateBall: true,
     };
   },
   methods: {
@@ -169,6 +187,10 @@ export default {
       .then((result) => {
         textarea.value += result;
       })
+    },
+    restartAnimation() {
+      this.animateBall = false;
+      setTimeout(() => this.animateBall = true, 100);
     }
   },
   mounted() {
@@ -285,5 +307,33 @@ export default {
   height: 300px;
   width: 300px;
   font-size: 24px;
+}
+
+.animation-ball {
+  animation-name: anim-ball;
+  animation-iteration-count: 3;
+  animation-duration: 2s;
+}
+
+.animation-alternate {
+  animation-direction: alternate;
+}
+
+.animation-forward {
+  animation-fill-mode: forwards;
+}
+
+.animation-infinite {
+  animation-iteration-count: infinite;
+}
+
+@keyframes anim-ball {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.5);
+  }
 }
 </style>

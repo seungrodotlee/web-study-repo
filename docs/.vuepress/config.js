@@ -9,11 +9,31 @@ module.exports = {
   themeConfig: {
     //displayAllHeaders: true,
     //logo: 'https://avatars1.githubusercontent.com/u/18749057?s=460&v=4', // 로고 이미지
-    nav: [{ text: "Home", link: "/" }],
+    nav: [
+      { text: "홈", link: "/" },
+      { text: "개념", link: "/study/basic/getting-start/" },
+      { text: "프론트엔드", link: "/study/frontend/css/" }
+    ],
     sidebarDepth: 2,
     sidebar: {
       collapsable: false,
-      "/study/": [
+      "/study/basic/": [
+        {
+          title: "웹 페이지는 어떻게 동작할까?",
+          collapsable: false,
+          children: [
+            "/study/basic/getting-start/"
+          ]
+        },
+        {
+          title: "웹 애플리케이션 배포하기",
+          collapsable: false,
+          children: [
+            "/study/basic/deploy/"
+          ]
+        }
+      ],
+      "/study/frontend/": [
         {
           title: "CSS 학습하기",
           collapsable: false,

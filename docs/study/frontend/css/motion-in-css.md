@@ -8,13 +8,12 @@ CSS에서는 이러한 부드러운 상태변화를 `transition`과 `animation` 
 |하위속성|의미|
 |-|-|
 |*-duration|전환효과가 지속되는 시간을 정의합니다.|
-|*-timing-function|3차 베지어 커브를 통해 그려지는 곡선 그래프에 따라 전환효과가 진행되도록 합니다. 베지어 커브는 N개의 점을 통해 그려지는 N-1차 그래프를 뜻하는데, CSS timing-function에서는 네개의 점을 사용하는 3차 베지어 커브를 사용합니다. 자세한 내용은 [이 곳](/study/frontend/css/motion-in-css.html#베지어커브)에서 다루겠습니다.|
+|*-timing-function|3차 베지어 커브를 통해 그려지는 곡선 그래프에 따라 전환효과가 진행되도록 합니다. 베지어 커브는 N개의 점을 통해 그려지는 N-1차 그래프를 뜻하는데, CSS timing-function에서는 네개의 점을 사용하는 3차 베지어 커브를 사용합니다. 자세한 내용은 [여기](https://ko.javascript.info/bezier-curve)를 참고해주세요.|
 |*-delay|전환효과가 트리거 된 시점으로부터 실제로 전환효과가 시작하는 시점까지 기다리는 시간을 정의합니다.|
 
 `transition`과 `animation`은 꽤 비슷하지만, 각자만이 가지고 있는 하위 속성도 있고, 트리거 조건도 다릅니다.  
 <br />
 먼저, `transition` 속성에 대해 알아보겠습니다.  
-
 
 ## 트랜지션
 
@@ -76,4 +75,67 @@ CSS에서는 이러한 부드러운 상태변화를 `transition`과 `animation` 
 |animation-fill-mode|애니메이션 시작 전후에 표시할 상태를 지정합니다|
 |animation-play-state|애니메이션을 시작/일시정지 할 수 있습니다|
 
-## 베지어커브
+```html
+<div class="animation-ball"></div>
+<div class="animation-ball animation-alternate"></div>
+<div class="animation-ball animation-forward"></div>
+<div class="animation-ball animation-infinite animation-alternate"></div>
+
+<style>
+  .animation-ball {
+    animation-name: anim-ball;
+    animation-iteration-count: 3;
+    animation-duration: 2s;
+  }
+
+  .animation-alternate {
+    animation-direction: alternate;
+    /** 
+    * normal(기본값): 매 사이클마다 애니메이션이 정방향으로 재생됩니다
+    * reverse: 매 사이클마다 애니메이션이 역방향으로 재생되고,
+    *          베지어커브도 반대로 적용됩니다 (ease-in -> ease-out)
+    * alternate: 애니메이션이 매 사이클마다 방향을 뒤집으며 재생됩니다
+    * alternate-reverse: 애니메이션이 매 사이클마다 방향을 뒤집는데, 
+    *                    첫 사이클이 역방향부터 재생됩니다
+    */
+  }
+
+  .animation-forward {
+    animation-fill-mode: forwards;
+    /**
+    * none(기본값): 애니메이션이 실행되지 않을 때, 애니메이션 키프레임에서 적용한
+    *               CSS 값에 관계없이 기본적으로 적용된 CSS 스타일이 표현됩니다
+    * forwards: 애니메이션이 종료된 상태의 값을 표현합니다
+    * backwards: 애니메이션이 시작되는 순간의 값을 표현합니다
+    * both: 애니메이션 시작 전에는 backwards, 종료 후에는 forwards 값을 적용합니다
+    */
+  }
+
+  .animation-infinite {
+    animation-iteration-count: infinite;
+    /** 
+    * 숫자값 혹은 infinite(무한반복)
+    */
+  }
+
+  @keyframes anim-ball {
+    from {
+      transform: scale(1);
+    }
+
+    to {
+      transform: scale(0.5);
+    }
+  }
+</style>
+```
+
+<Example mode="animation" />
+
+::: tip CSS에서 모션효과 처리시 성능
+위의 코드에서 `transform`을 `width`와 `height`를 직접 변경하는 코드로 바꿔보면, 애니메이션이 뚝뚝 끊기는 느낌을 받을 수 있을겁니다. 왜 겉보기에는 똑같은 동작을 수행하는데, 이처럼 차이가 날까요?  
+<br />
+CSS에서 `transition`이나 `animation` 속성이 트리거 될 때에는, 어떤 속성값을 변경하느냐에 따라 성능차이가 발생합니다. 이는, 각 속성마다 값이 변할 때 브라우저에서 발생되는 동작의 차이에 의해 결정됩니다. (어떤 속성들은 Reflow, Repaint 과정을 모두 거치는 반면, 어떤 속성들은 두 과정 모두 거치지 않습니다)  
+<br />
+최신 브라우저에서는 `opacity`와 `transform` 속성이 변경될 때, reflow와 repaint가 발생하지 않기 때문에, 이 두 속성을 사용한 모션효과를 권장합니다.
+:::

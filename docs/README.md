@@ -3,7 +3,7 @@ home: true
 heroText: BreakingWeb
 tagline: 웹 박살내기
 actionText: 박살내러 가기 →
-actionLink: /study/frontend/css/
+actionLink: /study/basic/getting-start/
 features:
 - title: 목표
   details: 자료구조/알고리즘 - Frontend - Backend - CI/CD까지 해보며 웹 박살내기
