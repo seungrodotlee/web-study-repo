@@ -29,7 +29,13 @@ module.exports = {
           title: "웹 애플리케이션 배포하기",
           collapsable: false,
           children: [
-            "/study/basic/deploy/"
+            "/study/basic/deploy/",
+            "/study/basic/deploy/git",
+            "/study/basic/deploy/static-web-dynamic-web",
+            "/study/basic/deploy/docker",
+            "/study/basic/deploy/code-test",
+            "/study/basic/deploy/zero-downtime",
+            "/study/basic/deploy/handoff-deploy",
           ]
         }
       ],
