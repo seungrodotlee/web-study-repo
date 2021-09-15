@@ -12,7 +12,8 @@ module.exports = {
     nav: [
       { text: "홈", link: "/" },
       { text: "개념", link: "/study/basic/getting-start/" },
-      { text: "프론트엔드", link: "/study/frontend/css/" }
+      { text: "프론트엔드", link: "/study/frontend/css/" },
+      { text: "서버관리", link: "/study/server/" }
     ],
     sidebarDepth: 2,
     sidebar: {
@@ -67,8 +68,18 @@ module.exports = {
             "/study/frontend/js/context",
             "/study/frontend/js/closure",
           ]
-        }
+        },
       ],
+      "/study/server/": [
+        {
+          title: "서버관리",
+          collapsable: false,
+          children: [
+            "/study/server/",
+            "/study/server/cheatsheet"
+          ]
+        }
+      ]
     },
   },
   markdown: {
