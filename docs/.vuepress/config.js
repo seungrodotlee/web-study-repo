@@ -3,12 +3,11 @@ module.exports = {
   description: "웹 박살내기",
   base: "/web-study-repo/",
   head: [
+    ["link", { rel: "stylesheet", href:"http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" }],
     ["link", { rel: "stylesheet", href:"https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" }],
     ["link", { rel: "stylesheet", href:"https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" }]
   ],
   themeConfig: {
-    //displayAllHeaders: true,
-    //logo: 'https://avatars1.githubusercontent.com/u/18749057?s=460&v=4', // 로고 이미지
     nav: [
       { text: "홈", link: "/" },
       { text: "개념", link: "/study/basic/getting-start/" },
@@ -76,6 +75,7 @@ module.exports = {
           collapsable: false,
           children: [
             "/study/server/",
+            "/study/server/cli",
             "/study/server/cheatsheet"
           ]
         }
