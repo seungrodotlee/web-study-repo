@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: BreakingWeb
+heroText: BreakingCode
 tagline: 웹 박살내기
 actionText: 박살내러 가기 →
 actionLink: /study/basic/getting-start/

@@ -12,7 +12,8 @@ module.exports = {
       { text: "홈", link: "/" },
       { text: "개념", link: "/study/basic/getting-start/" },
       { text: "프론트엔드", link: "/study/frontend/css/" },
-      { text: "서버관리", link: "/study/server/" }
+      { text: "서버관리", link: "/study/server/" },
+      { text: "자료구조/알고리즘", link: "/study/grow-up/"}
     ],
     sidebarDepth: 2,
     sidebar: {
@@ -77,6 +78,22 @@ module.exports = {
             "/study/server/",
             "/study/server/cli",
             "/study/server/cheatsheet"
+          ]
+        }
+      ],
+      "/study/grow-up/": [
+        {
+          title: "자료구조",
+          collapsable: false,
+          children: [
+            "/study/grow-up/data-structure/"
+          ]
+        },
+        {
+          title: "알고리즘",
+          collapsable: false,
+          children: [
+            "/study/grow-up/algorithm/"
           ]
         }
       ]
