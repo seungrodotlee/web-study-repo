@@ -3,9 +3,27 @@ module.exports = {
   description: "웹 박살내기",
   base: "/web-study-repo/",
   head: [
-    ["link", { rel: "stylesheet", href:"http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" }],
-    ["link", { rel: "stylesheet", href:"https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" }],
-    ["link", { rel: "stylesheet", href:"https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" }]
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css",
+      },
+    ],
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css",
+      },
+    ],
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css",
+      },
+    ],
   ],
   themeConfig: {
     nav: [
@@ -13,7 +31,7 @@ module.exports = {
       { text: "개념", link: "/study/basic/getting-start/" },
       { text: "프론트엔드", link: "/study/frontend/css/" },
       { text: "서버관리", link: "/study/server/" },
-      { text: "자료구조/알고리즘", link: "/study/grow-up/"}
+      { text: "자료구조/알고리즘", link: "/study/grow-up/" },
     ],
     sidebarDepth: 2,
     sidebar: {
@@ -22,9 +40,7 @@ module.exports = {
         {
           title: "웹 페이지는 어떻게 동작할까?",
           collapsable: false,
-          children: [
-            "/study/basic/getting-start/"
-          ]
+          children: ["/study/basic/getting-start/"],
         },
         {
           title: "웹 애플리케이션 배포하기",
@@ -37,8 +53,8 @@ module.exports = {
             "/study/basic/deploy/code-test",
             "/study/basic/deploy/zero-downtime",
             "/study/basic/deploy/handoff-deploy",
-          ]
-        }
+          ],
+        },
       ],
       "/study/frontend/": [
         {
@@ -53,7 +69,7 @@ module.exports = {
             "/study/frontend/css/variable",
             "/study/frontend/css/media-query",
             "/study/frontend/css/pre-processer",
-            "/study/frontend/css/tailwindcss"
+            "/study/frontend/css/tailwindcss",
           ],
         },
         {
@@ -67,7 +83,7 @@ module.exports = {
             "/study/frontend/js/asynchronized",
             "/study/frontend/js/context",
             "/study/frontend/js/closure",
-          ]
+          ],
         },
       ],
       "/study/server/": [
@@ -77,26 +93,23 @@ module.exports = {
           children: [
             "/study/server/",
             "/study/server/cli",
-            "/study/server/cheatsheet"
-          ]
-        }
+            "/study/server/cheatsheet",
+            "/study/server/vim",
+          ],
+        },
       ],
       "/study/grow-up/": [
         {
           title: "자료구조",
           collapsable: false,
-          children: [
-            "/study/grow-up/data-structure/"
-          ]
+          children: ["/study/grow-up/data-structure/"],
         },
         {
           title: "알고리즘",
           collapsable: false,
-          children: [
-            "/study/grow-up/algorithm/"
-          ]
-        }
-      ]
+          children: ["/study/grow-up/algorithm/"],
+        },
+      ],
     },
   },
   markdown: {
