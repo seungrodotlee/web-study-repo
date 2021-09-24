@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>서버에 원격 저장소 만들기 | Breaking-Web</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css">
+    <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+    <meta name="description" content="웹 박살내기">
+    
+    <link rel="preload" href="/web-study-repo/assets/css/0.styles.03daecf2.css" as="style"><link rel="preload" href="/web-study-repo/assets/js/app.1b67cee7.js" as="script"><link rel="preload" href="/web-study-repo/assets/js/2.3bdc2f70.js" as="script"><link rel="preload" href="/web-study-repo/assets/js/33.be8d32eb.js" as="script"><link rel="prefetch" href="/web-study-repo/assets/js/10.9637485c.js"><link rel="prefetch" href="/web-study-repo/assets/js/11.22400c15.js"><link rel="prefetch" href="/web-study-repo/assets/js/12.4a0285dc.js"><link rel="prefetch" href="/web-study-repo/assets/js/13.9faf71c0.js"><link rel="prefetch" href="/web-study-repo/assets/js/14.c47da649.js"><link rel="prefetch" href="/web-study-repo/assets/js/15.ab85c752.js"><link rel="prefetch" href="/web-study-repo/assets/js/16.053883a7.js"><link rel="prefetch" href="/web-study-repo/assets/js/17.23e640c0.js"><link rel="prefetch" href="/web-study-repo/assets/js/18.606c7708.js"><link rel="prefetch" href="/web-study-repo/assets/js/19.cd05f792.js"><link rel="prefetch" href="/web-study-repo/assets/js/20.ab67663c.js"><link rel="prefetch" href="/web-study-repo/assets/js/21.c40273da.js"><link rel="prefetch" href="/web-study-repo/assets/js/22.af3b9a25.js"><link rel="prefetch" href="/web-study-repo/assets/js/23.889eaeb5.js"><link rel="prefetch" href="/web-study-repo/assets/js/24.fb0ba19f.js"><link rel="prefetch" href="/web-study-repo/assets/js/25.492c2c70.js"><link rel="prefetch" href="/web-study-repo/assets/js/26.e0d128c6.js"><link rel="prefetch" href="/web-study-repo/assets/js/27.19860636.js"><link rel="prefetch" href="/web-study-repo/assets/js/28.642cb350.js"><link rel="prefetch" href="/web-study-repo/assets/js/29.6c028faf.js"><link rel="prefetch" href="/web-study-repo/assets/js/3.23e57bc5.js"><link rel="prefetch" href="/web-study-repo/assets/js/30.2b7127f9.js"><link rel="prefetch" href="/web-study-repo/assets/js/31.1a16aee4.js"><link rel="prefetch" href="/web-study-repo/assets/js/32.b20ee608.js"><link rel="prefetch" href="/web-study-repo/assets/js/34.985712f2.js"><link rel="prefetch" href="/web-study-repo/assets/js/35.695c6278.js"><link rel="prefetch" href="/web-study-repo/assets/js/36.c1b77c49.js"><link rel="prefetch" href="/web-study-repo/assets/js/37.7ba7d0b9.js"><link rel="prefetch" href="/web-study-repo/assets/js/38.764328ea.js"><link rel="prefetch" href="/web-study-repo/assets/js/39.b107d131.js"><link rel="prefetch" href="/web-study-repo/assets/js/4.7e7f6c46.js"><link rel="prefetch" href="/web-study-repo/assets/js/40.806df0d9.js"><link rel="prefetch" href="/web-study-repo/assets/js/41.f48f5f70.js"><link rel="prefetch" href="/web-study-repo/assets/js/42.610493e6.js"><link rel="prefetch" href="/web-study-repo/assets/js/5.43831a4e.js"><link rel="prefetch" href="/web-study-repo/assets/js/6.f489972f.js"><link rel="prefetch" href="/web-study-repo/assets/js/7.332edea0.js"><link rel="prefetch" href="/web-study-repo/assets/js/8.b960260b.js"><link rel="prefetch" href="/web-study-repo/assets/js/9.e896b909.js">
+    <link rel="stylesheet" href="/web-study-repo/assets/css/0.styles.03daecf2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web-study-repo/" class="home-link router-link-active"><!----> <span class="site-name">Breaking-Web</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/web-study-repo/" class="nav-link">
+  홈
+</a></div><div class="nav-item"><a href="/web-study-repo/study/basic/getting-start/" class="nav-link">
+  개념
+</a></div><div class="nav-item"><a href="/web-study-repo/study/frontend/css/" class="nav-link">
+  프론트엔드
+</a></div><div class="nav-item"><a href="/web-study-repo/study/server/" class="nav-link">
+  서버관리
+</a></div><div class="nav-item"><a href="/web-study-repo/study/git/" class="nav-link router-link-active">
+  깃
+</a></div><div class="nav-item"><a href="/web-study-repo/study/grow-up/data-structure/" class="nav-link">
+  코딩응애 벗어나기
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/web-study-repo/" class="nav-link">
+  홈
+</a></div><div class="nav-item"><a href="/web-study-repo/study/basic/getting-start/" class="nav-link">
+  개념
+</a></div><div class="nav-item"><a href="/web-study-repo/study/frontend/css/" class="nav-link">
+  프론트엔드
+</a></div><div class="nav-item"><a href="/web-study-repo/study/server/" class="nav-link">
+  서버관리
+</a></div><div class="nav-item"><a href="/web-study-repo/study/git/" class="nav-link router-link-active">
+  깃
+</a></div><div class="nav-item"><a href="/web-study-repo/study/grow-up/data-structure/" class="nav-link">
+  코딩응애 벗어나기
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>깃</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web-study-repo/study/git/" aria-current="page" class="sidebar-link">무엇을 배우게 되나요?</a></li><li><a href="/web-study-repo/study/git/getting-start.html" class="sidebar-link">GIT을 GIT답게</a></li><li><a href="/web-study-repo/study/git/create-remote-repo.html" aria-current="page" class="active sidebar-link">서버에 원격 저장소 만들기</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="서버에-원격-저장소-만들기"><a href="#서버에-원격-저장소-만들기" class="header-anchor">#</a> 서버에 원격 저장소 만들기</h1> <p>GitHub, GitLab 등을 우리는 보통 원격저장소라고 부릅니다. 이러한 원격저장소는 우리가 작성한 코드의 버전을 온라인에서 관리할 수 있도록 해주고, 팀과 협업을 진행할 수 있도록 도와줍니다. 이러한 원격저장소에 접근할 때는 HTTPS나 SSH를 사용해서 원격 저장소에 접속하게 됩니다.<br> <br>
+이 문서에서는 SSH를 통해 접근할 수 있는 원격저장소를 만드는 법을 알아보겠습니다.<br> <br></p> <p><strong>1. SSH 접속 설정하기</strong></p> <p>sshd_config 파일 열기</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">vim</span> /etc/ssh/sshd_config
+</code></pre></div><p>58번 Line쯤에 PasswordAuthentication을 yes로 수정</p> <div class="language- extra-class"><pre class="language-text"><code>PasswordAuthentication yes
+</code></pre></div><p>sshd 재시작</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">service</span> sshd restart
+</code></pre></div><br> <p><strong>2. 원격저장소 생성</strong></p> <p><strong>홈 디렉토리</strong>에서 저장소 디렉토리 생성</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">mkdir</span> name.git
+</code></pre></div><p>저장소 Initialize</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token builtin class-name">cd</span> name.git
+<span class="token function">git</span> init --bare --share
+</code></pre></div><br> <p><strong>3. 로컬에서 remote 저장소 추가</strong></p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">git</span> remote <span class="token function">add</span> origin <span class="token operator">&lt;</span>user<span class="token operator">&gt;</span>@<span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>:name.git
+</code></pre></div><br> <p><strong>4. 원격저장소에 접근(pull, push ...)시마다 비밀번호 입력</strong></p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">git</span> push origin master
+<span class="token operator">&lt;</span>user<span class="token operator">&gt;</span>@<span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>'s password: <span class="token operator">&lt;</span>비밀번호 입력<span class="token operator">&gt;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web-study-repo/study/git/getting-start.html" class="prev">
+        GIT을 GIT답게
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/web-study-repo/assets/js/app.1b67cee7.js" defer></script><script src="/web-study-repo/assets/js/2.3bdc2f70.js" defer></script><script src="/web-study-repo/assets/js/33.be8d32eb.js" defer></script>
+  </body>
+</html>
