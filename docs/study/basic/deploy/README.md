@@ -1,6 +1,5 @@
 # 무엇을 배우게 되나요?
 
-- [GIT을 GIT답게](/study/basic/deploy/git.html)
 - [정적웹과 동적웹 배포](/study/basic/deploy/static-web-dynamic-web.html)
 - [도커와 컨테이너](/study/basic/deploy/docker.html)
 - [코드테스트](/study/basic/deploy/code-test.html)

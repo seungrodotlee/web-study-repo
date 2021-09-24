@@ -31,7 +31,8 @@ module.exports = {
       { text: "개념", link: "/study/basic/getting-start/" },
       { text: "프론트엔드", link: "/study/frontend/css/" },
       { text: "서버관리", link: "/study/server/" },
-      { text: "자료구조/알고리즘", link: "/study/grow-up/" },
+      { text: "깃", link: "/study/git/" },
+      { text: "코딩응애 벗어나기", link: "/study/grow-up/data-structure/" },
     ],
     sidebarDepth: 2,
     sidebar: {
@@ -47,7 +48,6 @@ module.exports = {
           collapsable: false,
           children: [
             "/study/basic/deploy/",
-            "/study/basic/deploy/git",
             "/study/basic/deploy/static-web-dynamic-web",
             "/study/basic/deploy/docker",
             "/study/basic/deploy/code-test",
@@ -98,11 +98,25 @@ module.exports = {
           ],
         },
       ],
+      "/study/git/": [
+        {
+          title: "깃",
+          collapsable: false,
+          children: [
+            "/study/git/",
+            "/study/git/getting-start",
+            "/study/git/create-remote-repo",
+          ],
+        },
+      ],
       "/study/grow-up/": [
         {
           title: "자료구조",
           collapsable: false,
-          children: ["/study/grow-up/data-structure/"],
+          children: [
+            "/study/grow-up/data-structure/",
+            "/study/grow-up/data-structure/getting-start",
+          ],
         },
         {
           title: "알고리즘",
